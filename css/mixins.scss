@@ -1,0 +1,45 @@
+
+@mixin prefix($stylename, $value, $options: webkit moz o ms) {
+  #{$stylename}: $value;
+  @each $option in $options {
+    @if $option == webkit {
+      -webkit-#{$stylename}: $value;
+    }
+    @else if $option == moz {
+      -moz-#{$stylename}: #{$value};
+    }
+    @else if $option == o {
+      -o-#{$stylename}: #{$value};
+    }
+    @else if $option == ms {
+      -ms-#{$stylename}: #{$value};
+    }
+  }
+}
+
+@mixin flex-center($direction: row) {
+  @include prefix('display', 'flex');
+  @include prefix('flex-direction', $direction);
+  @include prefix('align-items', 'center');
+  @include prefix('justify-content', 'center');
+}
+@mixin flex-between($direction: row) {
+  @include prefix('display', 'flex');
+  @include prefix('flex-direction', $direction);
+  @include prefix('align-items', 'center');
+  @include prefix('justify-content', 'space-between');
+}
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin multi-line-ellipsis($num: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
