@@ -6,7 +6,7 @@ html, body{
   font-size: 16px;
 }
 body{
-  background: url(../images/page_bg.png) no-repeat center / cover;
+  background: url(../images/login/page_bg.png) no-repeat center / cover;
   position: relative;
   min-width: 1000px;
 }
@@ -96,7 +96,7 @@ input:-ms-input-placeholder{
 .form{
   width: 656px;
   height: 495px;
-  background: url(../images/form_bg.png) no-repeat center / 100%;
+  background: url(../images/login/form_bg.png) no-repeat center / 100%;
   margin: 0 auto 0;
   overflow: hidden;
   &-title{
